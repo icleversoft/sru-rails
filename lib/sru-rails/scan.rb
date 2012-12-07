@@ -1,4 +1,4 @@
-#require 'sru/response'
+require 'sru-rails/response'
 
 module Sru
 
