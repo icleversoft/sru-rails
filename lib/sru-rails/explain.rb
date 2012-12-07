@@ -1,4 +1,4 @@
-require 'sru/response'
+#require 'sru/response'
 
 module Sru
   class ExplainResponse < Response
