@@ -33,8 +33,10 @@ module Sru
       return unless el
       case parser_type(pdoc)
       when 'libxml'
+        return pdoc.find_first("zs:#{path}/text()") unless el.content.nil?
         return el.content
       when 'rexml'
+        return pdoc.get_text("zs:#{path}") unless el.text.nil?
         return el.text 
       end
       return nil
