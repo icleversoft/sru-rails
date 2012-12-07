@@ -2,7 +2,7 @@ module Sru
 
   # base class for all SRU responses
   class Response
-    require 'sru/xpath'
+    require 'sru-rails/xpath'
     include Sru::XPath
 
 
