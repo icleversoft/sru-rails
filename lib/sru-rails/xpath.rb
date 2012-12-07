@@ -30,13 +30,12 @@ module Sru
     # get text for first matching node
     def xpath(pdoc, path, namespace = '')
       el = xpath_first(pdoc, path, namespace)
-#      return unless el
       case parser_type(pdoc)
       when 'libxml'
-        return pdoc.find_first("zs:#{path}/text()") unless el.content.nil?
+        return pdoc.find_first("zs:#{path}/text()") if el.nil?
         return el.content
       when 'rexml'
-        return pdoc.get_text("zs:#{path}") unless el.text.nil?
+        return pdoc.get_text("zs:#{path}") if el.nil?
         return el.text 
       end
       return nil
