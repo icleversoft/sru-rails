@@ -16,7 +16,7 @@ module Sru
 
     def number_of_records
       obj = xpath_all(@doc, './/zs:recordData', @namespaces)
-      return 0 if obj.nil?
+      return 0 if xpath(@doc, './/zs:numberOfRecords', @namespaces).nil?
       return Integer(xpath(@doc, './/zs:numberOfRecords', @namespaces))
     end
 
