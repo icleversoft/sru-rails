@@ -15,6 +15,8 @@ module Sru
     include Enumerable
 
     def number_of_records
+      obj = xpath_all(@doc, './/zs:recordData', @namespaces)
+      return 0 unless obj.nil?
       return Integer(xpath(@doc, './/zs:numberOfRecords', @namespaces))
     end
 
