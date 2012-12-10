@@ -112,7 +112,7 @@ module Sru
     def zsearch_retrieve( query, options = {})
       options[:xpquery] = query
       options[:operation] = 'searchRetrieve'
-      options[:startRecord] = 1
+      options[:startRecord] = 1 unless options.has_key? :startRecord
       options[:maximumRecords] = 10 unless options.has_key? :maximumRecords
       options[:recordSchema] = 'marcxml'
 
