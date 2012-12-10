@@ -113,7 +113,7 @@ module Sru
       options[:xpquery] = query
       options[:operation] = 'searchRetrieve'
       options[:startRecord] = 1
-      options[:maximumRecords] = 10
+      options[:maximumRecords] = 10 unless options.has_key? :maximumRecords
       options[:recordSchema] = 'marcxml'
 
       doc = get_doc( options )
